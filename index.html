@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Дом Пирога — свежие пироги с доставкой в Цюрихе</title>
+  <meta name="description" content="Профессиональный сайт‑магазин: свежие пироги ручной работы с доставкой по Цюриху. Заказ онлайн, быстрая доставка." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif; }
+    .glass { backdrop-filter: blur(8px); background: rgba(255,255,255,.7); }
+  </style>
+</head>
+<body class="bg-neutral-50 text-neutral-900">
+  <div class="w-full text-center text-xs sm:text-sm bg-amber-50 text-amber-900 py-2">🚚 Доставляем сегодня по Цюриху при заказе до 16:00</div>
+  <header class="sticky top-0 z-50 bg-white/80 glass border-b border-neutral-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-2 font-extrabold text-xl">
+        <span class="inline-block w-8 h-8 rounded-2xl bg-amber-400"></span>
+        Дом Пирога
+      </a>
+      <nav class="hidden md:flex items-center gap-8 font-medium">
+        <a href="#menu" class="hover:text-amber-600">Меню</a>
+        <a href="#delivery" class="hover:text-amber-600">Доставка</a>
+        <a href="#about" class="hover:text-amber-600">О нас</a>
+        <a href="#instagram" class="hover:text-amber-600">Instagram</a>
+        <a href="#faq" class="hover:text-amber-600">FAQ</a>
+        <a href="#contacts" class="hover:text-amber-600">Контакты</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="cartBtn" class="relative px-4 py-2 rounded-xl border border-neutral-300 hover:border-neutral-400"><span>Корзина</span><span id="cartCount" class="ml-2 inline-flex items-center justify-center min-w-[1.5rem] h-6 rounded-full bg-amber-500 text-white text-xs px-1">0</span></button>
+        <a href="tel:+41000000000" class="hidden sm:inline-block px-4 py-2 rounded-xl bg-amber-500 text-white hover:bg-amber-600">Позвонить</a>
+      </div>
+    </div>
+  </header>
+  <section id="home" class="relative overflow-hidden">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24 grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-4xl sm:text-6xl font-extrabold leading-tight">Свежие пироги от <span class="text-amber-600">Ситого Боба</span></h1>
+        <p class="mt-4 text-lg text-neutral-600">Классические и авторские начинки, 100% натуральные ингредиенты.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#menu" class="px-6 py-3 rounded-xl bg-amber-600 text-white hover:bg-amber-700">Выбрать пироги</a>
+          <a href="#instagram" class="px-6 py-3 rounded-xl border border-neutral-300 hover:border-neutral-400">Смотреть фото в Instagram</a>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="aspect-[4/3] rounded-3xl bg-[url('https://images.unsplash.com/photo-1514511543037-333a0f86eac1?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center shadow-2xl"></div>
+      </div>
+    </div>
+  </section>
+  <section id="menu" class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
+      <div class="flex items-end justify-between">
+        <h2 class="text-3xl sm:text-4xl font-extrabold">Меню</h2>
+        <div class="text-sm text-neutral-500">* Цена за 1 шт. Ø 20 см (~700 г)</div>
+      </div>
+      <div id="productGrid" class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </div>
+  </section>
+  <section id="contacts" class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 grid lg:grid-cols-2 gap-10">
+      <div>
+        <h2 class="text-3xl font-extrabold">Контакты</h2>
+        <ul class="mt-6 space-y-2 text-neutral-700">
+          <li>📍 ул. Примерная 1, 8000 Zürich</li>
+          <li>📞 +41 00 000 00 00</li>
+          <li>✉️ hello@sytibob.ch</li>
+          <li>📷 <a href="https://www.instagram.com/sytyi_bob/" target="_blank" class="text-amber-600 hover:text-amber-700">@sytyi_bob</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <script>
+    const products=[{id:'p1',name:'Куриный с грибами',price:24},{id:'p2',name:'Говядина с луком',price:26}];
+    const fmt=v=>v.toFixed(2)+' CHF';
+    const grid=document.getElementById('productGrid');
+    products.forEach(p=>{const el=document.createElement('div');el.innerHTML=`<div class='p-4 border'><div>${p.name}</div><div>${fmt(p.price)}</div></div>`;grid.appendChild(el)});
+  </script>
+</body>
+</html>
