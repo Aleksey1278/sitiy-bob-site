@@ -4,26 +4,23 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ситий Боб — свежие пироги с доставкой</title>
-  <meta name="description" content="Свежие пироги ручной работы. Меню, корзина и быстрый заказ в WhatsApp. Фото — в Instagram." />
+  <meta name="description" content="Свежие пироги ручной работы. Меню, корзина и быстрый заказ в WhatsApp." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* базовая типографика, без лишней “магии” */
-    body {
-      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
-    }
+    body { font-family: 'Inter', system-ui, sans-serif; }
     .glass { backdrop-filter: blur(8px); background: rgba(255,255,255,.7); }
   </style>
 </head>
 <body class="bg-neutral-50 text-neutral-900">
-  <!-- верхняя плашка с оффером; потом можно менять текст под акции -->
+  <!-- верхняя плашка -->
   <div class="w-full text-center text-xs sm:text-sm bg-amber-50 text-amber-900 py-2">
     🚚 Заказы до 16:00 — доставка сегодня с 18:00 до 21:00
   </div>
 
-  <!-- шапка сайта -->
+  <!-- шапка -->
   <header class="sticky top-0 z-50 bg-white/80 glass border-b border-neutral-200">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <a href="#home" class="flex items-center gap-2 font-extrabold text-xl">
@@ -43,7 +40,6 @@
           <span>Корзина</span>
           <span id="cartCount" class="ml-2 inline-flex items-center justify-center min-w-[1.5rem] h-6 rounded-full bg-amber-500 text-white text-xs px-1">0</span>
         </button>
-        <!-- TODO: заменить на реальный номер -->
         <a href="tel:+380000000000" class="hidden sm:inline-block px-4 py-2 rounded-xl bg-amber-500 text-white hover:bg-amber-600">Позвонить</a>
       </div>
     </div>
@@ -63,14 +59,8 @@
           <a href="#menu" class="px-6 py-3 rounded-xl bg-amber-600 text-white hover:bg-amber-700">Выбрать пироги</a>
           <a href="#instagram" class="px-6 py-3 rounded-xl border border-neutral-300 hover:border-neutral-400">Смотреть фото</a>
         </div>
-        <div class="mt-6 text-sm text-neutral-500">
-          Самовывоз и доставка. Время и зона — ниже.
-        </div>
       </div>
-      <div class="relative">
-        <!-- сток, заменить при желании на свои фото -->
-        <div class="aspect-[4/3] rounded-3xl bg-[url('https://images.unsplash.com/photo-1514511543037-333a0f86eac1?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center shadow-2xl"></div>
-      </div>
+      <div class="aspect-[4/3] rounded-3xl bg-neutral-200 shadow-2xl"></div>
     </div>
   </section>
 
@@ -91,17 +81,15 @@
       <div class="lg:col-span-2">
         <h2 class="text-3xl font-extrabold">Доставка и оплата</h2>
         <ul class="mt-6 space-y-3 text-neutral-700">
-          <li>🚚 По городу: 60–90 минут; бесплатно от 1500 ₴ / 60 CHF (подставьте своё).</li>
-          <li>⏰ Сегодня: заказ до 16:00 → доставка 18:00–21:00. На завтра — без ограничений.</li>
-          <li>💳 Оплата: наличными/картой при получении. Онлайн — по ссылке (Stripe/LiqPay).</li>
+          <li>🚚 По городу: 60–90 минут; бесплатно от 1500 ₴ .</li>
+          <li>⏰ Сегодня: заказ до 16:00 → доставка 18:00–21:00.</li>
+          <li>💳 Оплата: наличными/картой при получении, онлайн по ссылке.</li>
           <li>📦 Самовывоз: адрес и часы см. ниже.</li>
         </ul>
       </div>
       <div class="bg-white border border-neutral-200 rounded-2xl p-6 shadow-sm">
         <h3 class="font-bold text-lg">Быстрый заказ</h3>
-        <p class="text-sm text-neutral-600 mt-1">Если спешите, пишите нам в WhatsApp — ответим быстро.</p>
         <a id="waQuick" href="#" class="mt-4 inline-flex items-center justify-center w-full px-4 py-3 rounded-xl bg-green-500 text-white hover:bg-green-600">Написать в WhatsApp</a>
-        <div class="text-xs text-neutral-400 mt-3">* телефон редактируется в коде → PHONE</div>
       </div>
     </div>
   </section>
@@ -112,13 +100,8 @@
       <div>
         <h2 class="text-3xl font-extrabold">Печём как для своих</h2>
         <p class="mt-4 text-neutral-700">Готовим по проверенным рецептам и не используем искусственных добавок.</p>
-        <div class="mt-6 grid sm:grid-cols-3 gap-4 text-sm">
-          <div class="p-4 rounded-xl border border-neutral-200">🥚 Натуральные ингредиенты</div>
-          <div class="p-4 rounded-xl border border-neutral-200">🔥 Печём ежедневно</div>
-          <div class="p-4 rounded-xl border border-neutral-200">❤️ Довольные клиенты</div>
-        </div>
       </div>
-      <div class="aspect-[4/3] rounded-3xl bg-[url('https://images.unsplash.com/photo-1514511543037-333a0f86eac1?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center shadow-2xl"></div>
+      <div class="aspect-[4/3] rounded-3xl bg-neutral-200 shadow-2xl"></div>
     </div>
   </section>
 
@@ -127,14 +110,9 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
       <div class="flex items-end justify-between">
         <h2 class="text-3xl sm:text-4xl font-extrabold">Мы в Instagram</h2>
-        <!-- TODO: заменить на ваш ник -->
-        <a id="igLinkTop" href="https://www.instagram.com/sytyi_bob/" target="_blank" rel="noopener" class="text-amber-600 hover:text-amber-700">@sytyi_bob</a>
+        <a href="https://www.instagram.com/sytyi_bob/" target="_blank" class="text-amber-600 hover:text-amber-700">@sytyi_bob</a>
       </div>
-      <p class="mt-3 text-neutral-600">Фото, закулисье кухни и акции.</p>
       <div id="igGrid" class="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3"></div>
-      <div class="mt-6">
-        <a href="https://www.instagram.com/sytyi_bob/" target="_blank" rel="noopener" class="inline-flex items-center px-4 py-2 rounded-xl border border-neutral-300 hover:border-neutral-400">Открыть профиль</a>
-      </div>
     </div>
   </section>
 
@@ -148,264 +126,65 @@
 
   <!-- контакты -->
   <section id="contacts" class="bg-white">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 grid lg:grid-cols-2 gap-10">
-      <div>
-        <h2 class="text-3xl font-extrabold">Контакты</h2>
-        <ul class="mt-6 space-y-2 text-neutral-700">
-          <!-- TODO: заполнить реальные данные -->
-          <li>📍 Адрес: уточняется</li>
-          <li>📞 Телефон: +38 000 000 00 00</li>
-          <li>✉️ Email: hello@example.com</li>
-          <li>📷 Instagram: <a href="https://www.instagram.com/sytyi_bob/" target="_blank" class="text-amber-600 hover:text-amber-700">@sytyi_bob</a></li>
-          <li>🕘 График: ежедневно 10:00–19:00</li>
-        </ul>
-      </div>
-      <form id="orderForm" class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6">
-        <h3 class="font-bold text-lg">Быстрый заказ по форме</h3>
-        <div class="grid sm:grid-cols-2 gap-4 mt-4">
-          <input required name="name" class="px-4 py-3 rounded-xl border border-neutral-300" placeholder="Ваше имя" />
-          <input required name="phone" class="px-4 py-3 rounded-xl border border-neutral-300" placeholder="Телефон (WhatsApp)" />
-          <input name="address" class="px-4 py-3 rounded-xl border border-neutral-300 sm:col-span-2" placeholder="Адрес доставки" />
-          <input name="time" class="px-4 py-3 rounded-xl border border-neutral-300 sm:col-span-2" placeholder="Желаемое время" />
-          <textarea name="comment" rows="3" class="px-4 py-3 rounded-xl border border-neutral-300 sm:col-span-2" placeholder="Комментарий"></textarea>
-          <button type="submit" class="sm:col-span-2 px-6 py-3 rounded-xl bg-amber-600 text-white hover:bg-amber-700">Отправить заказ в WhatsApp</button>
-        </div>
-        <p class="text-xs text-neutral-500 mt-3">Заявка уйдёт в WhatsApp вместе с содержимым корзины.</p>
-      </form>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
+      <h2 class="text-3xl font-extrabold">Контакты</h2>
+      <p class="mt-4">📞 Телефон: +38 000 000 00 00</p>
     </div>
   </section>
 
   <footer class="border-t border-neutral-200">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-neutral-500">
-      <div>© <span id="year"></span> Ситий Боб</div>
-      <div class="flex gap-4">
-        <a href="#" class="hover:text-neutral-800">Политика конфиденциальности</a>
-        <a href="#" class="hover:text-neutral-800">Условия заказа</a>
-      </div>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 text-center text-sm text-neutral-500">
+      © <span id="year"></span> Ситий Боб
     </div>
   </footer>
 
-  <!-- выдвижная корзина -->
-  <div id="cartDrawer" class="fixed inset-0 hidden">
-    <div class="absolute inset-0 bg-black/25" onclick="toggleCart(false)"></div>
-    <div class="absolute right-0 top-0 h-full w-full sm:w-[460px] bg-white shadow-2xl p-6 flex flex-col">
-      <div class="flex items-center justify-between">
-        <h3 class="text-xl font-bold">Ваша корзина</h3>
-        <button class="p-2 rounded-lg hover:bg-neutral-100" onclick="toggleCart(false)">✕</button>
-      </div>
-      <div id="cartItems" class="mt-4 flex-1 overflow-auto divide-y"></div>
-      <div id="cartEmpty" class="mt-6 text-neutral-500 hidden">Корзина пуста</div>
-      <div class="mt-6 space-y-3">
-        <div class="flex items-center justify-between text-lg font-semibold">
-          <span>Итого</span><span id="cartTotal">0 ₴</span>
-        </div>
-        <button id="checkoutBtn" class="w-full px-6 py-3 rounded-xl bg-amber-600 text-white hover:bg-amber-700">Оформить заказ</button>
-      </div>
-    </div>
-  </div>
-
   <script>
-    // ========= настройки (под себя) =========
-    // TODO: подставить реальный номер в международном формате
     const PHONE = '+380000000000';
-    // TODO: ник инстаграма
-    const IG_HANDLE = 'sytyi_bob';
-    // можно вставить ссылки на посты/риелсы (до 12 шт.)
-    const IG_POSTS = [
-      // 'https://www.instagram.com/p/XXXXXXX/',
-    ];
 
-    // демо-меню (потом можно грузить из админки)
     const products = [
-      { id: 'p1', name: 'Куриный с грибами', price: 240, weight: '700 г', img: 'https://images.unsplash.com/photo-1543352634-8732c8f7d1c1?q=80&w=1200&auto=format&fit=crop' },
-      { id: 'p2', name: 'Говядина с луком', price: 260, weight: '750 г', img: 'https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?q=80&w=1200&auto=format&fit=crop' },
-      { id: 'p3', name: 'Картофель с грибами', price: 220, weight: '700 г', img: 'https://images.unsplash.com/photo-1505253758473-96b7015fcd40?q=80&w=1200&auto=format&fit=crop' },
-      { id: 'p4', name: 'Сыр и зелень', price: 210, weight: '650 г', img: 'https://images.unsplash.com/photo-1481931715705-36f5f79f1bb4?q=80&w=1200&auto=format&fit=crop' },
-      { id: 'p5', name: 'Яблочный', price: 200, weight: '700 г', img: 'https://images.unsplash.com/photo-1603899121159-1ec2f9ab3b36?q=80&w=1200&auto=format&fit=crop' },
-      { id: 'p6', name: 'Вишнёвый', price: 220, weight: '700 г', img: 'https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?q=80&w=1200&auto=format&fit=crop' },
+      { id: 'p1', name: 'Куриный с грибами', price: 240, weight: '700 г' },
+      { id: 'p2', name: 'Говядина с луком', price: 260, weight: '750 г' },
+      { id: 'p3', name: 'Картофель с грибами', price: 220, weight: '700 г' },
+      { id: 'p4', name: 'Сыр и зелень', price: 210, weight: '650 г' },
+      { id: 'p5', name: 'Яблочный', price: 200, weight: '700 г' },
+      { id: 'p6', name: 'Вишнёвый', price: 220, weight: '700 г' },
     ];
 
-    // FAQ — базовые ответы
     const faqs = [
-      { q: 'Как оформить заказ?', a: 'Добавьте пироги в корзину, нажмите «Оформить заказ» и подтвердите в WhatsApp или через форму.' },
-      { q: 'Можно ли сегодня?', a: 'Да, если заказ до 16:00. Доставка 18:00–21:00.' },
-      { q: 'Как оплачивать?', a: 'Наличными/картой при получении, либо онлайн по ссылке оплаты.' },
-      { q: 'Можно изменить начинку?', a: 'Напишите нам — попробуем предложить вариант.' },
+      { q: 'Как оформить заказ?', a: 'Добавьте пироги в корзину и нажмите «Оформить».' },
+      { q: 'Можно ли сегодня?', a: 'Да, если заказ до 16:00.' },
+      { q: 'Как оплачивать?', a: 'Наличными или картой при получении.' },
     ];
 
-    // ========= утилиты =========
-    const money = v => `${v.toFixed(0)} ₴`; // просто гривны; при желании локализуем
-    const getCart = () => JSON.parse(localStorage.getItem('cart_v1')||'[]');
-    const saveCart = (c) => localStorage.setItem('cart_v1', JSON.stringify(c));
-
-    // ========= рендер меню =========
     const grid = document.getElementById('productGrid');
     products.forEach(p => {
       const el = document.createElement('div');
-      el.className = 'group rounded-2xl overflow-hidden border border-neutral-200 bg-white shadow-sm hover:shadow-md transition-shadow';
+      el.className = 'rounded-2xl border p-4 flex flex-col justify-between';
       el.innerHTML = `
-        <div class="aspect-[4/3] bg-neutral-100" style="background-image:url('${p.img}'); background-size:cover; background-position:center;"></div>
-        <div class="p-4 flex items-start justify-between gap-3">
+        <div class="aspect-[4/3] bg-neutral-200 rounded-xl mb-3"></div>
+        <div class="flex items-center justify-between">
           <div>
             <div class="font-semibold">${p.name}</div>
             <div class="text-sm text-neutral-500">${p.weight}</div>
           </div>
           <div class="text-right">
-            <div class="font-bold">${money(p.price)}</div>
-            <button class="mt-2 px-3 py-2 rounded-xl bg-amber-600 text-white hover:bg-amber-700" data-id="${p.id}">В корзину</button>
+            <div class="font-bold">${p.price} ₴</div>
+            <button class="mt-2 px-3 py-1 rounded-xl bg-amber-600 text-white">В корзину</button>
           </div>
         </div>`;
       grid.appendChild(el);
     });
 
-    grid.addEventListener('click', (e) => {
-      const btn = e.target.closest('button[data-id]');
-      if (!btn) return;
-      const id = btn.dataset.id;
-      const p = products.find(x => x.id === id);
-      const cart = getCart();
-      const found = cart.find(x => x.id === id);
-      if (found) found.qty += 1; else cart.push({ id, name: p.name, price: p.price, qty: 1 });
-      saveCart(cart);
-      updateCartBadge();
-      btn.textContent = 'Добавлено';
-      setTimeout(()=> btn.textContent = 'В корзину', 900);
-    });
-
-    function updateCartBadge(){
-      const count = getCart().reduce((s,i)=>s+i.qty,0);
-      document.getElementById('cartCount').textContent = count;
-    }
-
-    // ========= корзина =========
-    const cartBtn = document.getElementById('cartBtn');
-    const cartDrawer = document.getElementById('cartDrawer');
-    cartBtn.addEventListener('click', ()=> toggleCart(true));
-
-    function toggleCart(show){
-      cartDrawer.classList.toggle('hidden', !show);
-      if (show) renderCart();
-    }
-
-    function renderCart(){
-      const list = document.getElementById('cartItems');
-      list.innerHTML = '';
-      const cart = getCart();
-      const empty = document.getElementById('cartEmpty');
-      empty.classList.toggle('hidden', cart.length !== 0);
-      let total = 0;
-      cart.forEach((item, idx) => {
-        total += item.price * item.qty;
-        const row = document.createElement('div');
-        row.className = 'py-3 flex items-center justify-between gap-3';
-        row.innerHTML = `
-          <div>
-            <div class="font-medium">${item.name}</div>
-            <div class="text-sm text-neutral-500">${money(item.price)} × ${item.qty}</div>
-          </div>
-          <div class="flex items-center gap-2">
-            <button class="px-2 py-1 rounded-lg border" data-act="dec" data-idx="${idx}">–</button>
-            <button class="px-2 py-1 rounded-lg border" data-act="inc" data-idx="${idx}">+</button>
-            <button class="px-2 py-1 rounded-lg border text-red-600" data-act="del" data-idx="${idx}">Удалить</button>
-          </div>`;
-        list.appendChild(row);
-      });
-      document.getElementById('cartTotal').textContent = money(total);
-    }
-
-    document.getElementById('cartItems').addEventListener('click', (e)=>{
-      const btn = e.target.closest('button[data-act]');
-      if (!btn) return;
-      const cart = getCart();
-      const idx = +btn.dataset.idx;
-      const act = btn.dataset.act;
-      if (act === 'inc') cart[idx].qty += 1;
-      if (act === 'dec') cart[idx].qty = Math.max(1, cart[idx].qty - 1);
-      if (act === 'del') cart.splice(idx,1);
-      saveCart(cart);
-      updateCartBadge();
-      renderCart();
-    });
-
-    // переход к форме заказа
-    document.getElementById('checkoutBtn').addEventListener('click', ()=>{
-      document.getElementById('contacts').scrollIntoView({ behavior: 'smooth' });
-      toggleCart(false);
-    });
-
-    // сообщение в WhatsApp
-    function buildWhatsAppMessage(formData){
-      const cart = getCart();
-      const lines = [
-        '🧺 Заказ с сайта Ситий Боб',
-        '',
-        ...cart.map(i => `• ${i.name} × ${i.qty} — ${money(i.price * i.qty)}`),
-        '',
-        `Итого: ${money(cart.reduce((s,i)=>s+i.price*i.qty,0))}`,
-        '',
-        `Имя: ${formData.get('name')||''}`,
-        `Телефон: ${formData.get('phone')||''}`,
-        `Адрес: ${formData.get('address')||'-'}`,
-        `Время: ${formData.get('time')||'-'}`,
-        `Комментарий: ${formData.get('comment')||'-'}`
-      ];
-      return encodeURIComponent(lines.join('\n'));
-    }
-
-    document.getElementById('orderForm').addEventListener('submit', (e)=>{
-      e.preventDefault();
-      const data = new FormData(e.currentTarget);
-      const msg = buildWhatsAppMessage(data);
-      const url = `https://wa.me/${PHONE.replace(/[^\d]/g,'')}?text=${msg}`;
-      window.open(url, '_blank');
-    });
-
-    // ========= instagram (oEmbed без ключей) =========
-    const igGrid = document.getElementById('igGrid');
-    function renderIG(){
-      if (!igGrid) return;
-      igGrid.innerHTML = '';
-      if (!IG_POSTS.length){
-        // плейсхолдеры до добавления ссылок
-        for(let i=0;i<6;i++){
-          const ph = document.createElement('div');
-          ph.className = 'aspect-square rounded-2xl bg-neutral-200';
-          igGrid.appendChild(ph);
-        }
-        return;
-      }
-      IG_POSTS.slice(0,12).forEach(url=>{
-        const wrap = document.createElement('div');
-        wrap.className = 'rounded-2xl overflow-hidden bg-white border border-neutral-200';
-        wrap.innerHTML = `<blockquote class="instagram-media" data-instgrm-permalink="${url}" data-instgrm-version="14"></blockquote>`;
-        igGrid.appendChild(wrap);
-      });
-      if (window.instgrm && window.instgrm.Embeds) window.instgrm.Embeds.process();
-    }
-
-    // ========= FAQ =========
     const faqList = document.getElementById('faqList');
-    faqs.forEach((f)=>{
+    faqs.forEach(f => {
       const el = document.createElement('details');
-      el.className = 'group rounded-2xl border border-neutral-200 bg-white p-4';
-      el.innerHTML = `<summary class="cursor-pointer font-semibold flex items-center justify-between">${f.q}<span class="text-neutral-400">+</span></summary><div class="mt-3 text-neutral-700">${f.a}</div>`;
+      el.className = 'p-4 border rounded-xl bg-white';
+      el.innerHTML = `<summary class="cursor-pointer font-semibold">${f.q}</summary><div class="mt-2 text-sm">${f.a}</div>`;
       faqList.appendChild(el);
     });
 
-    // ========= прочее =========
-    document.getElementById('waQuick').href = `https://wa.me/${PHONE.replace(/[^\d]/g,'')}`;
     document.getElementById('year').textContent = new Date().getFullYear();
-    const igLinkTop = document.getElementById('igLinkTop');
-    if (igLinkTop) igLinkTop.href = `https://www.instagram.com/${IG_HANDLE}/`;
-    renderIG();
-    updateCartBadge();
-
-    // оверлей от Instagram для встраивания
-    (function(){
-      const s = document.createElement('script');
-      s.async = true; s.src = 'https://www.instagram.com/embed.js';
-      document.body.appendChild(s);
-    })();
+    document.getElementById('waQuick').href = `https://wa.me/${PHONE.replace(/[^\d]/g,'')}`;
   </script>
 </body>
 </html>
